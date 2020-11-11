@@ -11,8 +11,15 @@ public class Main {
         new Uploader(countDownLatch);
         new Downloader(" Пользовател " , countDownLatch, countDownLatch1, semaphore);
 
-
-    }
+          try {
+             countDownLatch1.await();
+             System.out.println("Файл удален с сервера ");
+            Thread. sleep(1000);
+          } catch (InterruptedException e) {
+              
+              
+          }
+     }
 }
 
 
