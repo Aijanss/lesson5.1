@@ -29,18 +29,7 @@ public class Uploader extends Thread {
                 System.out.println(" * ");
                 sleep(50 / 20 * 1000);
             } catch (InterruptedException interruptedException) {
-                try {
-                    sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-            try {
-                sleep(5000);
-                countDownLatch.await();
-                System.out.println("Файл удален с сервера ");
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
+               
             }
         }
     }
