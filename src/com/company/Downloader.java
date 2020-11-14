@@ -21,10 +21,11 @@ public class Downloader extends Thread {
     public synchronized void run() {
         for (int i = 1; i < 11; i++) {
             try {
-                sleep(300);
+                sleep(1000);
+                countDownLatch.await();
                 Semaphore.acquire();
                 System.out.println(getName() + i + "  Скачивает файл с сервера");
-                sleep(1500);
+                sleep(500);
                 System.out.println(getName() + i + " Скачал файл");
                 countDownLatch1.countDown();
                 Semaphore.release();
